@@ -4,7 +4,7 @@ from main_menu import open_menu
 class main(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Grid-Based Window Switcher")
+        self.title("Elmag")
         self.geometry("800x450")
         # make row/column 0 expandable so pages fill the window
         self.grid_rowconfigure(0, weight=1)
