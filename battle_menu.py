@@ -10,6 +10,9 @@ class start_battle(tk.Frame):
     def __init__(self, master):
         super().__init__(master)
 
+        #setting the enemy health
+        monster_health = 100
+
         # --- memanggil background image dari folder assets dan dijadikan background wallpaper ---
         # mengambil file dari folder assets dan menaruhnya di label
         bg_pil = Image.open("assets/test-image2.jpg")
@@ -30,7 +33,7 @@ class start_battle(tk.Frame):
         # --- penempatan label ---
         self.enemyinfo_lbl = tk.Label(self, text="Monster", font=("Arial", 20))
         self.enemyinfo_lbl.grid(row=1, column=1, columnspan=2, padx=10, pady=10)
-        self.enemyinfo_lbl = tk.Label(self, text="100/100", font=("Arial", 15))
+        self.enemyinfo_lbl = tk.Label(self, text=f"{monster_health}/100", font=("Arial", 15))
         self.enemyinfo_lbl.grid(row=2, column=1, columnspan=2, padx=10, pady=10)
 
         # --- penempatan tombol return to menu ---
@@ -56,6 +59,15 @@ class start_battle(tk.Frame):
 
     def goto_attack_menu(self):
         self.master.show_page(start_attack)
+
+    # fucking around with this
+    # def healing(self):
+    # if potion_inventory > 1:
+    #     player_health += potion_health
+    # else:
+    #     self.potionwarning_lbl = tk.Label(self, text="Tidak ada potion!", font=("Arial", 20))
+
+
 
 class start_attack(tk.Frame):
 
